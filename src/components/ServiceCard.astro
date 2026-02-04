@@ -1,0 +1,70 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    href?: string;
+    glowColor?: string;
+}
+
+const {
+    title,
+    description,
+    href = "#contacto",
+    glowColor = "from-cumbre-cyan/20",
+} = Astro.props;
+---
+
+<div
+    class="service-card group relative p-8 rounded-3xl bg-gradient-to-b from-white/10 to-transparent backdrop-blur-2xl border border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+>
+    <!-- Glow Effect on Hover -->
+    <div
+        class="glow-element absolute inset-0 bg-gradient-to-b opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        class:list={[glowColor, "to-transparent"]}
+    >
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col h-full">
+        <div
+            class="icon-wrapper w-16 h-16 mb-6 text-white transition-colors drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+        >
+            <slot name="icon" />
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-white">
+            {title}
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-8 flex-grow">
+            {description}
+        </p>
+        <a
+            href={href}
+            class="read-more-link inline-flex items-center text-white font-bold text-sm tracking-wide transition-colors"
+        >
+            LEER MÁS
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="3"
+                stroke="currentColor"
+                class="w-4 h-4 ml-2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Custom styles for the icon and link focus colors if needed */
+    .service-card:hover .icon-wrapper {
+        color: var(--hover-color, #06b6d4);
+    }
+    .service-card:hover .read-more-link {
+        color: var(--hover-color, #06b6d4);
+    }
+</style>

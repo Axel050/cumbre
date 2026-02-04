@@ -1,0 +1,330 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { Image } from "astro:assets";
+import mount4 from "../assets/mount4.png";
+---
+
+<Layout title="CumbreIT | Arquitectura de Software y Desarrollo Web">
+  <!-- Hero Section -->
+  <section
+    class="relative min-h-screen mn-h-[800px] flex items-center justify-center overflow-hidden pt-10"
+  >
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-cumbre-navy z-0"></div>
+
+    <!-- Mountains Image - Much taller and more prominent -->
+    <div
+      class="absolute md:bottom-0 top-0 left-0 right-0 h-[90vh] w-full z-0 pointer-events-none flex items-end justify-center bgred-500"
+    >
+      <Image
+        src={mount4}
+        alt="Digital Mountains"
+        loading="eager"
+        fetchpriority="high"
+        class="md:w-full md:h-auto h-full md:object-contain object-cover opacity-100 mix-blend-screen md:translate-y-20"
+      />
+    </div>
+
+    <!-- Gradient Overlay to ensure text readability -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-cumbre-navy via-cumbre-navy/10 to-transparent z-0 pointer-events-none"
+    >
+    </div>
+
+    <!-- Cybernetic Scan Effect -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div
+        class="w-full h-[2px] bg-cumbre-cyan/50 shadow-[0_0_15px_rgba(6,182,212,0.8)] absolute top-0 left-0 animate-scan"
+      >
+      </div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10 text-center mb-20">
+      <div
+        class="inline-block mb-6 px-4 py-1.5 rounded-full border border-cumbre-cyan/30 bg-cumbre-cyan/5 text-cumbre-cyan text-sm font-medium animate-fade-in-up backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+      >
+        🚀 Soluciones Digitales de Alto Nivel
+      </div>
+
+      <h1
+        class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight drop-shadow-[0_0_25px_rgba(6,182,212,0.2)]"
+      >
+        De la Lógica Compleja <br />
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-cumbre-cyan to-blue-400 text-glow"
+          >a Soluciones Reales</span
+        >
+      </h1>
+
+      <p
+        class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed font-light text-shadow"
+      >
+        Especialistas en <strong>Laravel</strong> y arquitecturas escalables. Desarrollamos
+        desde tu primera web profesional hasta sistemas de misión crítica.
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
+        <a
+          href="#contacto"
+          class="w-full md:w-auto bg-cumbre-cyan hover:bg-cyan-300 text-cumbre-navy font-bold py-4 px-10 rounded-lg shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all transform hover:scale-105 hover:-translate-y-1"
+        >
+          Hablemos de tu Idea
+        </a>
+        <a
+          href="#servicios"
+          class="w-full md:w-auto bg-white/5 backdrop-blur-md border border-white/20 hover:border-cumbre-cyan/50 text-white font-medium py-4 px-10 rounded-lg transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+        >
+          Ver Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview (Cards) -->
+  <section id="servicios" class="py-24 relative z-10 -mt-32">
+    <div
+      class="absolute inset-0 bg-cumbre-blue/20 skew-y-2 transform origin-bottom-left mt-32"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-cumbre-blue/20 skew-y-1 transform origin-bottom-left mt-32"
+    >
+    </div>
+
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1: Complex Systems -->
+        <ServiceCard
+          title="Sistemas Complejos"
+          description="Arquitectura backend robusta con Laravel 12. Integraciones con AFIP, MercadoPago y lógica de negocio avanzada."
+          glowColor="from-cumbre-cyan/20"
+        >
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-full h-full"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+            ></path>
+          </svg>
+        </ServiceCard>
+
+        <!-- Service 2: Startups/Web -->
+        <ServiceCard
+          title="Webs para Emprendedores"
+          description="Tu primera presencia digital con diseño premium. Sitios rápidos, autogestionables y preparados para escalar cuando tú lo hagas."
+          glowColor="from-purple-500/20"
+        >
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-full h-full"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+            ></path>
+          </svg>
+        </ServiceCard>
+
+        <!-- Service 3: Real-Time & DevOps -->
+        <ServiceCard
+          title="Infraestructura & Datos"
+          description="Despliegues en VPS propios, optimización con Virtualmin y manejo de datos en tiempo real con WebSockets."
+          glowColor="from-emerald-500/20"
+        >
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-full h-full"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"
+            ></path>
+          </svg>
+        </ServiceCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project Section (Subastas) -->
+  <section id="proyectos" class="py-24 bg-black/20">
+    <div class="container mx-auto px-6">
+      <div class="mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">
+          Proyectos <span class="text-cumbre-cyan">Destacados</span>
+        </h2>
+        <div class="h-1 w-20 bg-cumbre-cyan rounded-full"></div>
+      </div>
+
+      <!-- Project Card: Subastas -->
+      <div
+        class="rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden shadow-2xl hover:shadow-cumbre-cyan/10 transition-shadow"
+      >
+        <div class="grid md:grid-cols-2 gap-0">
+          <div
+            class="bg-gray-800/50 h-64 md:h-auto overflow-hidden relative group"
+          >
+            <!-- Abstract Representation of the System (since we don't have screenshots yet) -->
+            <div
+              class="absolute inset-0 bg-cumbre-blue/20 flex items-center justify-center"
+            >
+              <div class="text-center p-6">
+                <div class="text-6xl mb-4 opacity-50">⚖️</div>
+                <span
+                  class="text-sm tracking-widest uppercase font-bold text-white/50"
+                  >Sistema Integral</span
+                >
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"
+            >
+            </div>
+          </div>
+          <div class="p-10 md:p-14 flex flex-col justify-center">
+            <div
+              class="inline-block px-3 py-1 rounded-full bg-cumbre-cyan/10 text-cumbre-cyan text-xs font-bold mb-4 w-fit"
+            >
+              CASO DE ÉXITO: SUBASTAS
+            </div>
+            <h3 class="text-3xl font-bold mb-4 text-white">
+              Plataforma de Subastas en Tiempo Real
+            </h3>
+            <p class="text-gray-400 mb-8 leading-relaxed">
+              Un sistema complejo diseñado para manejar alto tráfico y
+              transacciones críticas. Integrado con <strong
+                >Facturación Electrónica (AFIP)</strong
+              > automatizada y botón de pago de <strong>MercadoPago</strong>.
+            </p>
+
+            <div class="grid grid-cols-2 gap-y-4 gap-x-8 mb-8">
+              <div>
+                <h4 class="text-white font-bold mb-1">Backend</h4>
+                <p class="text-sm text-gray-500">Laravel 12 + Livewire</p>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Tiempo Real</h4>
+                <p class="text-sm text-gray-500">Laravel Reverb (WebSockets)</p>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Fiscal</h4>
+                <p class="text-sm text-gray-500">Integración WSFE AFIP</p>
+              </div>
+              <div>
+                <h4 class="text-white font-bold mb-1">Infraestructura</h4>
+                <p class="text-sm text-gray-500">VPS Virtualmin</p>
+              </div>
+            </div>
+
+            <!-- <a href="#" class="inline-flex items-center text-cumbre-cyan hover:text-white font-bold transition-colors group">
+                            Ver Caso de Estudio 
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contacto" class="md:py-24 py-18 relative overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cumbre-blue/10 skew-y-3 transform origin-bottom-right"
+    >
+    </div>
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        ¿Listo para escalar tu proyecto?
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+        Ya sea que necesites una web profesional para comenzar o un sistema
+        complejo para operar, tenemos la arquitectura perfecta para ti.
+      </p>
+      <a
+        href="mailto:info@cumbreit.com"
+        class="inline-block bg-white text-cumbre-navy font-bold py-4 px-10 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105 transition-all duration-300"
+      >
+        Contactar Ahora
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Advanced Spotlight & Tilt Effect
+  const cards = document.querySelectorAll(".service-card");
+
+  cards.forEach((card) => {
+    const htmlCard = card as HTMLElement;
+    const glowElement = htmlCard.querySelector(".glow-element") as HTMLElement;
+
+    // Initialize variables
+    htmlCard.style.setProperty("--mouse-x", "0px");
+    htmlCard.style.setProperty("--mouse-y", "0px");
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = htmlCard.getBoundingClientRect();
+      const mouseEvent = e as MouseEvent;
+
+      // Calculate mouse position
+      const x = mouseEvent.clientX - rect.left;
+      const y = mouseEvent.clientY - rect.top;
+
+      // Update CSS variables for other effects
+      htmlCard.style.setProperty("--mouse-x", `${x}px`);
+      htmlCard.style.setProperty("--mouse-y", `${y}px`);
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Gentle 3D Tilt (Reduced angle for premium feel)
+      const rotateX = ((y - centerY) / centerY) * -5; // Reduced from -10
+      const rotateY = ((x - centerX) / centerX) * 5; // Reduced from 10
+
+      // Apply transformation
+      htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      // Spotlight Effect: Focused radial gradient
+      if (glowElement) {
+        glowElement.style.opacity = "1";
+        // Two layers: A focused bright spot and a wider faint glow
+        glowElement.style.background = `
+                    radial-gradient(circle 100px at ${x}px ${y}px, rgba(6,182,212,0.25), transparent),
+                    radial-gradient(circle 250px at ${x}px ${y}px, rgba(6,182,212,0.05), transparent)
+                `;
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      // Reset with smooth transition
+      htmlCard.style.transform =
+        "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+
+      if (glowElement) {
+        glowElement.style.opacity = "0";
+      }
+    });
+  });
+</script>

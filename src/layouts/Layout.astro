@@ -1,0 +1,103 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="CumbreIT - Desarrollo de Software y Sistemas Web"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-cumbre-navy text-white min-h-screen flex flex-col">
+        <header
+            class="fixed w-full top-0 z-50 bg-cumbre-navy/80 backdrop-blur-md border-b border-white/10"
+        >
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <a href="#" class="text-2xl font-bold flex items-center gap-2">
+                    <!-- Placeholder Logo Icon -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="w-8 h-8 text-cumbre-cyan"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
+                        ></path>
+                    </svg>
+                    <span class="tracking-tighter"
+                        >Cumbre<span class="text-cumbre-cyan">IT</span></span
+                    >
+                </a>
+                <div
+                    class="hidden md:flex gap-8 text-sm font-medium text-gray-300"
+                >
+                    <a
+                        href="#servicios"
+                        class="hover:text-cumbre-cyan transition-colors"
+                        >Servicios</a
+                    >
+                    <a
+                        href="#proyectos"
+                        class="hover:text-cumbre-cyan transition-colors"
+                        >Proyectos</a
+                    >
+                    <a
+                        href="#nosotros"
+                        class="hover:text-cumbre-cyan transition-colors"
+                        >Nosotros</a
+                    >
+                    <a
+                        href="#contacto"
+                        class="hover:text-cumbre-cyan transition-colors"
+                        >Contacto</a
+                    >
+                </div>
+                <a
+                    href="#contacto"
+                    class="hidden md:block bg-cumbre-cyan/10 hover:bg-cumbre-cyan/20 text-cumbre-cyan font-bold py-2 px-6 rounded-full border border-cumbre-cyan/50 transition-all hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                >
+                    Iniciar Proyecto
+                </a>
+            </nav>
+        </header>
+
+        <main class="flex-grow pt-20">
+            <slot />
+        </main>
+
+        <footer class="bg-slate-900 border-t border-white/5 py-12 mt-20">
+            <div
+                class="container mx-auto px-6 text-center text-gray-400 text-sm"
+            >
+                <p>
+                    &copy; {new Date().getFullYear()} CumbreIT. Todos los derechos
+                    reservados.
+                </p>
+                <p class="mt-2">
+                    Desarrollado con <span class="text-cumbre-cyan">Astro</span> &
+                    <span class="text-cumbre-cyan">Laravel Theme</span>.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
