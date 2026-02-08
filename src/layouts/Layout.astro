@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import icon from "../assets/iconok.png";
+import { Image } from "astro:assets";
 
 interface Props {
     title: string;
@@ -12,38 +14,73 @@ const { title } = Astro.props;
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/iconCI.png" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- SEO Primario -->
+        <title>{title} | Desarrollo de Software a Medida</title>
         <meta
             name="description"
-            content="CumbreIT - Desarrollo de Software y Sistemas Web"
+            content="Especialistas en desarrollo de software desde cero. Creamos sistemas 100% personalizados, sitios web exclusivos y soluciones de correo corporativo para tu negocio."
         />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <meta
+            name="keywords"
+            content="desarrollo software argentina, sistemas web a medida, desarrollo desde cero, cumbreit, software personalizado, emails corporativos"
+        />
+        <link rel="canonical" href="https://cumbreit.com.ar/" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cumbreit.com.ar/" />
+        <meta
+            property="og:title"
+            content="CumbreIT | Desarrollo de Software 100% a Medida"
+        />
+        <meta
+            property="og:description"
+            content="Dejamos de lado las plantillas para crear software artesanal diseñado exclusivamente para tu empresa."
+        />
+        <meta
+            property="og:image"
+            content="https://cumbreit.com.ar/og-image.png"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://cumbreit.com.ar/" />
+        <meta
+            property="twitter:title"
+            content="CumbreIT | Desarrollo de Software 100% a Medida"
+        />
+        <meta
+            property="twitter:description"
+            content="Dejamos de lado las plantillas para crear software artesanal diseñado exclusivamente para tu empresa."
+        />
+        <meta
+            property="twitter:image"
+            content="https://cumbreit.com.ar/og-image.png"
+        />
     </head>
     <body class="bg-cumbre-navy text-white min-h-screen flex flex-col">
         <header
             class="fixed w-full top-0 z-50 bg-cumbre-navy/80 backdrop-blur-md border-b border-white/10"
         >
             <nav
-                class="container mx-auto px-6 py-4 flex justify-between items-center"
+                class="container mx-auto md:px-6 px-4 py-2 flex justify-between items-center"
             >
-                <a href="#" class="text-2xl font-bold flex items-center gap-2">
-                    <!-- Placeholder Logo Icon -->
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                        class="w-8 h-8 text-cumbre-cyan"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
-                        ></path>
-                    </svg>
+                <a
+                    href="#"
+                    class="md:text-2xl text-xl font-bold flex justify-center items-center boder border-cyan-800 rounded-lg md:pl-3 pl-1 md:pr-4 pr-2 shadow shadow-cyan-800"
+                >
+                    <Image
+                        src={icon}
+                        alt="Digital Mountains"
+                        loading="eager"
+                        class="md:w-20 w-15 h-auto my-0 p-0 m-0 h-fit"
+                    />
+
                     <span class="tracking-tighter"
                         >Cumbre<span class="text-cumbre-cyan">IT</span></span
                     >
@@ -93,9 +130,8 @@ const { title } = Astro.props;
                     &copy; {new Date().getFullYear()} CumbreIT. Todos los derechos
                     reservados.
                 </p>
-                <p class="mt-2">
-                    Desarrollado con <span class="text-cumbre-cyan">Astro</span> &
-                    <span class="text-cumbre-cyan">Laravel Theme</span>.
+                <p class="mt-2 text-gray-500">
+                    Sistemas robustos y diseño exclusivo de alto impacto.
                 </p>
             </div>
         </footer>
